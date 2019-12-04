@@ -1,0 +1,9 @@
+This error occurs from time to time during installation of new package in ubuntu.
+
+Solution:
+lsof /var/lib/dpkg/lock-frontend
+
+sudo pkill -9 pid
+
+sudo rm /var/lib/dpkg/lock-frontend
+sudo dpkg --configure -a
